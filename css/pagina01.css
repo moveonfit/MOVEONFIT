@@ -1,0 +1,380 @@
+*{
+    margin: 0px;
+    padding:0px;
+    box-sizing: border-box;
+}
+
+:root{
+    --preto: #000000;
+    --branco: #FFFFFF;
+    --rosa: #F2B6C6;
+    --cinzaescuro:#F5F5F5;
+}
+
+body{
+    background-color: white;
+}
+
+/* CABEÇALHO */
+
+header{
+    display: flex;
+    align-items: center;
+    background-color: var(--preto);
+    padding: 15px;
+    position:fixed;
+    top: 0px;
+    width: 100%;
+    z-index: 1;
+   
+}
+
+#menu{
+    position: absolute;
+    left: 15px;
+}
+
+#menu > p{
+    color:#f9c0d3 ;
+    font-size: 25px;
+}
+
+/* ===== MENU MOBILE ===== */
+
+#menu{
+    font-size: 26px;
+    cursor: pointer;
+}
+
+/* OVERLAY */
+#menu-overlay{
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.3s;
+    z-index: 998;
+}
+
+/* MENU LATERAL */
+#menu-lateral{
+    position: fixed;
+    top: 0;
+    left: -260px;
+    width: 260px;
+    height: 100vh;
+
+    background: #000;
+    padding: 20px;
+
+    transition: 0.3s ease;
+    z-index: 999;
+
+    font-family: 'Montserrat';
+}
+
+/* FECHAR */
+#menu-fechar{
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* LINKS */
+#menu-lateral ul{
+    list-style: none;
+    margin-top: 50px;
+}
+
+#menu-lateral li{
+    margin-bottom: 20px;
+}
+
+#menu-lateral a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+}
+
+/* ATIVO */
+#menu-lateral.ativo{
+    left: 0;
+}
+
+#menu-overlay.ativo{
+    opacity: 1;
+    pointer-events: auto;
+}
+
+
+#logo{
+    margin: 0 auto;
+}
+
+#logo > a{
+    font-family: 'Montserrat';
+    font-weight: 900;
+    font-size: 25px;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    color:#f9c0d3;
+}
+
+/*CONTEUDO*/
+
+main{
+    height: 100vh;
+    margin-top: 60px;
+}
+
+/*PARTE DA IMAGEM*/
+
+#inf-produto{
+    height: 100%;
+}
+
+#imagem-produto{
+    display: flex;
+    width: 100%;
+    height: 400px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+}
+
+#imagem-produto::-webkit-scrollbar {
+    display: none;
+}
+
+#imagem-produto img {
+    width: 100%;
+    height: 400px;
+    margin: 0px 1px;
+    flex-shrink: 0;
+    background-color: rgba(187, 85, 187, 0.589);
+}
+
+/*PARTE DE BAIXO*/
+
+#infor{
+    padding: 20px;
+    font-family: 'Roboto';
+}
+
+#inf-produto{
+    position: relative;
+}
+
+#nome-produto{
+    font-size: 30px;
+    text-transform: capitalize;
+    margin-bottom: 30px;
+}
+
+#preco-produto{
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+/* PARTE TAMANHO*/
+
+.medidas{
+    display: flex;
+    flex-direction: column;
+}
+
+.medidas span{
+    font-size: 20px;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+.tamanho-grupo{
+   display: flex;
+   align-items: flex-start;
+}
+
+.tamanho-grupo input{
+    display: none;
+}
+
+.medidas label{
+    border: 1px solid #ccc;
+    padding: 15px 20px;
+    margin-right: 8px;
+    border-radius: 45%;
+    cursor: pointer;
+}
+
+/*class criada pelo javascript .ativo*/
+.medidas label.ativo{
+    border: 2px solid black;
+}
+
+
+/*PARTE BOTAO*/
+
+#btn-produto{
+    width: 100%;
+}
+
+.btn{
+    border: none;
+    width: 90%;
+    padding: 20px 40px;
+    border-radius: 10px;
+    display: block;
+    margin: 30px auto;
+    background-color:black;
+    font-size: 20px;
+    font-weight: 300;
+    color: var(--rosa);
+}
+
+hr{
+    width: 90%;
+    margin: 0px auto;
+}
+
+/*PARTE DA DESCRIÇÃO*/
+
+#descricao-produto{
+    font-family: 'Roboto';
+    font-weight: 200;
+    padding: 20px;
+}
+
+#descricao-produto h2{
+    font-size: 30px;
+    margin: 20px 0px;
+    text-transform: capitalize;
+}
+
+#descricao-produto p{
+    font-weight: 400;
+    font-size: 20px;
+}
+
+
+/*FORMULARIO DE CEP E NOME*/
+
+#form-dados{
+    background-color: #f9c0d3;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Roboto";
+
+    width: 100%;
+    height: 95%;
+    padding: 20px;
+
+    position: fixed;
+    left: 0;
+    top: 55px;
+    overflow-y: auto;
+    border: 4px solid black;
+}
+
+#form-container{
+    width: 100%;
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+#form-dados h2{
+    text-align: center;
+    margin:50px 0px 20px 0px;
+    font-size: 28px;
+}
+
+#form-container input{
+    padding: 10px 5px;
+    width: 300px;
+    outline: none;
+    border: none;
+    display: block;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+#form-dados label{
+    font-size: 20px;
+    font-weight: 300;
+}
+
+#form-dados div{
+    margin-bottom: 10px;
+}
+
+#btn-enviar{
+    border: none;
+    width: 50%;
+    padding: 15px 10px;
+    border-radius: 10px;
+    margin: 30px auto;
+    background-color:black;
+    font-size: 20px;
+    font-weight: 300;
+    color: white;
+}
+
+#form-dados.ativo{
+    display: flex;
+    opacity: 1;
+}
+
+#form-dados #exit{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    background-color: black;
+    color: white;
+    padding: 8px 15px 10px 15px;
+    border-radius: 50% 50%;
+}
+
+.alerta{
+   position: fixed;
+   background-color:black;
+   padding: 20px 10px;
+   border-radius: 5px;
+   font-size: 30px;
+   width: 375px;
+   left: 50%;
+   top: 10%;
+   transform: translate(-50%, -50%);
+   opacity: 0;
+   transition: all 0.2s ease;
+   pointer-events: none;
+   font-family: 'Roboto';
+   font-weight: 300;
+   box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+
+/* ATIVO */
+.alerta.ativo{
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* ERRO */
+.alerta.erro{
+    border-bottom: 5px solid white;
+    color: white;
+}
+
+/* SUCESSO */
+.alerta.sucesso{
+    border-bottom: green;
+    color: black;
+}
+

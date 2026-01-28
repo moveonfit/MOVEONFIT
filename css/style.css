@@ -25,6 +25,7 @@ header{
     position:fixed;
     top: 0px;
     width: 100%;
+    z-index: 1000;
 }
 
 #menu{
@@ -35,6 +36,72 @@ header{
 #menu > p{
     color:#f9c0d3 ;
     font-size: 25px;
+}
+
+/* OVERLAY */
+#menu-overlay{
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.3s;
+    z-index: 1000;
+}
+
+/* MENU LATERAL */
+#menu-lateral{
+    position: fixed;
+    top: 0;
+    left: -260px;
+    width: 260px;
+    height: 100vh;
+
+    background: #000;
+    padding: 20px;
+
+    transition: 0.3s ease;
+    z-index: 1100;
+
+    font-family: 'Montserrat';
+}
+
+/* FECHAR */
+#menu-fechar{
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+#container-fechar{
+    width: 100%;
+    border-bottom: 1px solid white;
+}
+
+/* LINKS */
+#menu-lateral ul{
+    list-style: none;
+    margin-top: 20px;
+}
+
+#menu-lateral li{
+    margin-bottom: 20px;
+}
+
+#menu-lateral a{
+    text-decoration: none;
+    color:white ;
+    font-size: 18px;
+}
+
+/* ATIVO */
+#menu-lateral.ativo{
+    left: 0;
+}
+
+#menu-overlay.ativo{
+    opacity: 1;
+    pointer-events: auto;
 }
 
 #logo{
@@ -59,6 +126,8 @@ header{
     width: 100vw;
     height: 50vh;
     margin-top: 80px;
+    z-index: 1;
+    position: relative;
 }
 
 #card-video video{
@@ -122,6 +191,10 @@ header{
     width: 100%;
 }
 
+.formulario p{
+    margin-top: 20px;
+}
+
 /*PARTE DO BOTAO*/
 .btn{
     border: none;
@@ -133,8 +206,25 @@ header{
     
 }
 
-.card > a{
+.card a{
     text-decoration: none;
+    color: black;
+
+}
+
+.card a:visited {
+    color: black;
+}
+
+.card a:hover {
+    color: black;
+}
+
+.card a:active {
+    color: black;
+}
+
+.btn{
     color: black;
 }
 
