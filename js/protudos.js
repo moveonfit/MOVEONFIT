@@ -6,9 +6,10 @@ const produtos = [
 
     {
         id:"1",
-        img:["img/img1.jpg","img/img7.jpg"],
-        nome:"conjuto shek",
-        preco:"R$ 89,00",
+        img:["img/maquinho01.jpg","img/maquinho02.jpg","img/maquinho03.jpg"],
+        nome:"Macaquinho Essence",
+        preco:"R$ 120,00",
+        tamanhos:["P","M","G"],
         descricao:'A Camiseta Dry Fit Fluid Move na cor chumbo une estilo moderno e desempenho excepcional! Produzida em tecido dry fit leve e respirável, proporciona rápida absorção de suor e secagem ágil, garantindo conforto térmico. Ideal para treinos intensos ou momentos casuais, com um design sofisticado e versátil.'
 
     },
@@ -17,6 +18,7 @@ const produtos = [
         img:["img/img3.jpg","img/img5.jpg"],
         nome:"conjuto shek",
         preco:"R$ 90,00",
+        tamanhos:[],
         descricao:''
     }
 
@@ -33,16 +35,30 @@ if(produto){
     document.getElementById("preco-produto").textContent = produto.preco;
     document.getElementById("descricao").textContent = produto.descricao;
 
-};
+    // PARTE IMAGEM
+    const imagem_produto = document.getElementById('imagem-produto');
 
-// PARTE IMAGEM
-const imagem_produto = document.getElementById('imagem-produto');
-
-produto.img.forEach(function(imgproduto){
+    produto.img.forEach(function(imgproduto){
     const imagem = document.createElement('img')
     imagem.src = imgproduto;
     imagem_produto.appendChild(imagem)
 });
+
+    const tamanhosInputs = document.querySelectorAll('input[name="tamanho1"]');
+
+    tamanhosInputs.forEach(input => {
+    const label = document.querySelector(`label[for="${input.id}"]`);
+
+    // se o tamanho NÃO existir no produto
+    if (!produto.tamanhos.includes(input.id)) {
+        input.disabled = true;
+        label.classList.add('indisponivel');
+        label.innerHTML += '<span class="x">✕</span>';
+    }
+});
+
+
+};
 
 
 // PARTE TAMANHO 
@@ -163,18 +179,27 @@ async function btnEnviar(){
     }
 
 
-    const mensagem = `
-    Olá! Meu nome é ${nome}
-    Produto: ${produto.nome}
-    Preço: ${produto.preco}
-    Tamanho: ${tamanhoSelecionado}
-    Endereço:
-    ${bairro} ,${rua},${numeroCasa},
-    ${cidade}/${uf}
-    CEP:${cep},
-    COMPLEMENTO:
-    ${complemento}
-    `;
+const mensagem = `
+Olá, Meu nome é ${nome} e gostaria de realizar um pedido com os seguintes dados:
+
+*PRODUTO:*
+
+*Nome*: ${produto.nome}
+*Preço*: ${produto.preco}
+*Tamanho*: ${tamanhoSelecionado}
+
+*ENDEREÇO DE ENTREGA:*
+
+*Bairro*: ${bairro}
+*Rua*: ${rua}
+*Número*: ${numeroCasa}
+*Cidade/UF*: ${cidade} - ${uf}
+*CEP*: ${cep}
+*Complemento*: ${complemento}
+
+Fico no aguardo da confirmação.
+Muito obrigado! 
+`;
 
 const telefone = '5511984210737';
 const url = `https://wa.me/${telefone}?text=${encodeURIComponent(mensagem)}`;
