@@ -20,7 +20,32 @@ const produtos = [
         preco:"R$ 140,00",
         tamanhos:['P','M'],
         descricao:''
+    },
+    {
+        id:"3",
+        img:["img/conjunto-canelado01.jpg","img/conjunto-canelado02.jpg","img/conjunto-canelado03.jpg"],
+        nome:"Conjunto Canelado",
+        preco:"R$ 50,00",
+        tamanhos:['P','M'],
+        descricao:''
+    },
+    {
+        id:"4",
+        img:["img/conjunto-ocean01.jpg","img/conjunto-ocean02.jpg","img/conjunto-ocean03.jpg"],
+        nome:"Conjunto Ocean Move",
+        preco:"R$ 110,00",
+        tamanhos:['P','M'],
+        descricao:''
+    },
+    {
+        id:"5",
+        img:["img/conjunto-power01.jpg","img/conjunto-power02.jpg","img/conjunto-power03.jpg"],
+        nome:"Conjunto Canelado Power",
+        preco:"R$ 110,00",
+        tamanhos:['P','M'],
+        descricao:''
     }
+
 
 ];
 
