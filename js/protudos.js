@@ -10,15 +10,15 @@ const produtos = [
         nome:"Macaquinho Essence",
         preco:"R$ 120,00",
         tamanhos:["P","M","G"],
-        descricao:'A Camiseta Dry Fit Fluid Move na cor chumbo une estilo moderno e desempenho excepcional! Produzida em tecido dry fit leve e respirável, proporciona rápida absorção de suor e secagem ágil, garantindo conforto térmico. Ideal para treinos intensos ou momentos casuais, com um design sofisticado e versátil.'
+        descricao:''
 
     },
     {
         id:"2",
-        img:["img/img3.jpg","img/img5.jpg"],
-        nome:"conjuto shek",
-        preco:"R$ 90,00",
-        tamanhos:[],
+        img:["img/conjunto-vermelho02.jpg","img/conjunto-vermelho01.jpg"],
+        nome:"Conjunto Poliamida",
+        preco:"R$ 140,00",
+        tamanhos:['P','M'],
         descricao:''
     }
 
