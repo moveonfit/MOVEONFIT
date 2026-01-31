@@ -41,7 +41,16 @@
 
         <ul>
             <li><a href="index.html">Início</a></li>
-            <li><a href="#">Produtos</a></li>
+            
+            <li class="item-produtos">
+                <a href="#" id="btn-produtos">Produtos ▾</a>
+                <ul class="submenu-produtos">
+                    <li><a href="#" data-filtro="conjuntos">Conjuntos</a></li>
+                    <li><a href="#" data-filtro="shorts">Shorts</a></li>
+                    <li><a href="#" data-filtro="camisas">Camisas</a></li>
+                </ul>
+            </li>
+            
             <li><a href="https://wa.me/5511984210737" target="_blank">Contato</a></li>
         </ul>
     </nav>
@@ -52,9 +61,6 @@
     </div>
     
 </header>
-
-
-    
 
     <div id="card-video">
 
@@ -68,6 +74,31 @@
         <section id="produtos">
 
             <article class="card">
+
+
+
+                <!--
+
+                   <article class="card">
+
+                      <a href="produtos.html?id=0" class="link-card">
+
+                        <div class="imagem-produto">
+                          <img src="img/.jpg" alt="">
+                        </div>
+
+                       </a>
+                  
+                        <div class="formulario">
+                    
+                        <h3></h3>
+                        <p>R$ 00,00</p>
+          
+                        </div>
+
+                    </article> 
+
+            -->
 
                 <a href="produtos.html?id=1" class="link-card">
 
@@ -87,7 +118,7 @@
             </article>
 
 
-            <article class="card">
+            <article class="card" data-categoria="conjuntos">
 
                 <a href="produtos.html?id=2" class="link-card">
 
@@ -106,7 +137,7 @@
 
             </article>
 
-            <article class="card">
+            <article class="card" data-categoria="conjuntos">
 
                 <a href="produtos.html?id=3" class="link-card">
 
@@ -125,7 +156,7 @@
 
             </article>
 
-              <article class="card">
+              <article class="card" data-categoria="conjuntos">
 
                 <a href="produtos.html?id=4" class="link-card">
 
@@ -144,7 +175,7 @@
 
             </article>
 
-              <article class="card">
+              <article class="card"  data-categoria="conjuntos">
 
                 <a href="produtos.html?id=5" class="link-card">
 
@@ -163,7 +194,24 @@
 
             </article>
 
+            <article class="card">
 
+                <a href="produtos.html?id=6" class="link-card">
+
+                    <div class="imagem-produto">
+                        <img src="img/conjunto-adidas01.jpg" alt="">
+                    </div>
+
+                </a>
+                  
+                <div class="formulario">
+                    
+                    <h3>Conjunto Adidas</h3>
+                    <p>R$ 105,00</p>
+          
+                </div>
+
+            </article>
 
         </section>
 

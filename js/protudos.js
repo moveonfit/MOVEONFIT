@@ -1,6 +1,21 @@
 const params = new URLSearchParams(window.location.search);
 const id = params.get('id');
 
+
+
+/* 
+  {
+    id:"",
+    img:["img/.jpg","img/.jpg","img/.jpg"],
+    nome:"",
+    preco:"R$ 00,00",
+    tamanhos:["","",""],
+    cores:[{ nome: '', cor: ''}],
+    descricao:''
+  }
+
+*/
+
 // BANCO DE DADOS / DADOS DE PRODUTOS
 const produtos = [
 
@@ -10,6 +25,7 @@ const produtos = [
         nome:"Macaquinho Essence",
         preco:"R$ 120,00",
         tamanhos:["P","M","G"],
+        cores:[{ nome: 'verde', cor: 'green', img:'img/maquinho02.jpg'}],
         descricao:''
 
     },
@@ -44,7 +60,17 @@ const produtos = [
         preco:"R$ 110,00",
         tamanhos:['P','M'],
         descricao:''
+    },
+    {
+        id:"6",
+        img:["img/conjunto-adidas01.jpg","img/conjunto-adidas02.jpg","img/conjunto-adidas03.jpg"],
+        nome:"Conjunto Adidas",
+        preco:"R$ 105,00",
+        tamanhos:["P","M","G"],
+        cores:[{ nome: '', cor: ''}],
+        descricao:''
     }
+
 
 
 ];
@@ -89,6 +115,7 @@ if(produto){
 // PARTE TAMANHO 
 const tamanhos = document.querySelectorAll('input[name="tamanho1"]');
 let tamanhoSelecionado = null;
+let corSelecionada = null;
 
 tamanhos.forEach(tamanho => {
     tamanho.addEventListener('change', function() {
@@ -133,6 +160,11 @@ function btnComprar(){
         mostrarAlerta('Selecione um tamanho', 'erro')
         return;
     };
+
+    if(!corSelecionada){
+        mostrarAlerta('Selecione uma cor', 'erro');
+        return;
+    }
 
      formulario.classList.add('ativo')
      
@@ -179,6 +211,33 @@ inputCep.addEventListener('input', async function () {
 });
 
 
+const listaCores = document.getElementById('lista-cores');
+
+if (!produto.cores || produto.cores.length === 0) {
+    listaCores.style.display = 'none';
+} else {
+    listaCores.innerHTML = '';
+
+    produto.cores.forEach(c => {
+        const span = document.createElement('span');
+        span.style.backgroundColor = c.cor;
+        span.title = c.nome;
+
+        span.addEventListener('click', () => {
+            // salva a cor escolhida
+            corSelecionada = c.nome;
+
+            // marca visualmente o span
+            document.querySelectorAll('.cores span').forEach(s => s.classList.remove('ativo'));
+            span.classList.add('ativo');
+        });
+
+        listaCores.appendChild(span);
+    });
+}
+
+
+
 // BOTAO ENVIAR / WHASAPP
 
 async function btnEnviar(){
@@ -212,6 +271,7 @@ Olá, Meu nome é ${nome} e gostaria de realizar um pedido com os seguintes dado
 *Nome*: ${produto.nome}
 *Preço*: ${produto.preco}
 *Tamanho*: ${tamanhoSelecionado}
+*Cor*: ${corSelecionada}
 
 *ENDEREÇO DE ENTREGA:*
 
@@ -254,15 +314,18 @@ const menuLateral = document.getElementById('menu-lateral');
 const menuFechar = document.getElementById('menu-fechar');
 const menuOverlay = document.getElementById('menu-overlay');
 
+// ABRIR MENU
 btnMenu.addEventListener('click', () => {
     menuLateral.classList.add('ativo');
     menuOverlay.classList.add('ativo');
 });
 
-menuFechar.addEventListener('click', fecharMenu);
-menuOverlay.addEventListener('click', fecharMenu);
-
-function fecharMenu(){
+// FUNÇÃO PARA FECHAR MENU
+function fecharMenu() {
     menuLateral.classList.remove('ativo');
     menuOverlay.classList.remove('ativo');
 }
+
+// FECHAR MENU
+menuFechar.addEventListener('click', fecharMenu);
+menuOverlay.addEventListener('click', fecharMenu);
