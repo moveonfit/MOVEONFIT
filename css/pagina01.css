@@ -265,6 +265,7 @@ main{
     height: 26px;
     border-radius: 50%;
     cursor: pointer;
+    border: 1px solid black;
 
 }
 
@@ -275,7 +276,7 @@ main{
 }
 
 .cores span.ativo{
-    border: 1px solid black;
+    border: 2px solid black;
 }
 
 

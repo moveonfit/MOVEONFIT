@@ -25,7 +25,7 @@ const produtos = [
         nome:"Macaquinho Essence",
         preco:"R$ 120,00",
         tamanhos:["P","M","G"],
-        cores:[{ nome: 'verde', cor: 'green', img:'img/maquinho02.jpg'}],
+        cores:[{ nome: 'verde', cor: '#006414',}],
         descricao:''
 
     },
@@ -35,6 +35,7 @@ const produtos = [
         nome:"Conjunto Poliamida",
         preco:"R$ 140,00",
         tamanhos:['P','M'],
+        cores:[{ nome: 'verde', cor: '#e80729',}],
         descricao:''
     },
     {
@@ -43,6 +44,7 @@ const produtos = [
         nome:"Conjunto Canelado",
         preco:"R$ 50,00",
         tamanhos:['P','M'],
+        cores:[{ nome: 'marrom', cor: '#722F37'}],
         descricao:''
     },
     {
@@ -51,6 +53,7 @@ const produtos = [
         nome:"Conjunto Ocean Move",
         preco:"R$ 110,00",
         tamanhos:['P','M'],
+        cores:[{ nome: 'branco', cor: '#ffff'}],
         descricao:''
     },
     {
@@ -59,6 +62,7 @@ const produtos = [
         nome:"Conjunto Canelado Power",
         preco:"R$ 110,00",
         tamanhos:['P','M'],
+        cores:[{ nome: 'azul', cor: '#1E90FF'}],
         descricao:''
     },
     {
@@ -67,11 +71,98 @@ const produtos = [
         nome:"Conjunto Adidas",
         preco:"R$ 105,00",
         tamanhos:["P","M","G"],
-        cores:[{ nome: '', cor: ''}],
+        cores:[],
         descricao:''
-    }
-
-
+    },
+    {
+    id:"7",
+    img:["img/conjunto-vinho.jfif","img/conjunto-verde03.jfif","img/conjunto-vinho01.jfif","img/conjunto-verde04.jfif"],
+    nome:"Conjunto Vinho",
+    preco:"R$ 99,99",
+    tamanhos:["P","M"],
+    cores:[{ nome: 'vinho', cor: '#722F37'},
+           { nome: 'azul', cor: '#1E90FF'}
+    ],
+    descricao:''
+  },
+    {
+    id:"8",
+    img:["img/conjunto-maquinho-power03.jfif","img/conjunto-maquinho-power02.jfif","img/conjunto-maquinho-power01.jfif"],
+    nome:"Conjunto Maquinho Power",
+    preco:"R$ 90,00",
+    tamanhos:["P","M"],
+    cores:[{ nome: 'marron', cor: '#8D4925'},
+           { nome: 'azul', cor: '#1E90FF'}
+    ],
+    descricao:''
+  },
+    {
+    id:"9",
+    img:["img/conjunto-azul-power01.jfif","img/conjunto-azul-power02.jfif"],
+    nome:"Conjunto Power",
+    preco:"R$ 80,00",
+    tamanhos:["P","M"],
+    cores:[{ nome: 'azul marinho', cor: '#1E90FF'}],
+    descricao:''
+  },
+    {
+    id:"10",
+    img:["img/short-marron01.jfif","img/short-marron02.jfi","img/short-marron03.jfif"],
+    nome:"Short",
+    preco:"R$ 40,00",
+    tamanhos:["P","M","G","GG"],
+    cores:[{ nome: 'marrom', cor: '#8D4925'},
+           { nome: 'vermelho', cor: '#e80729'},
+           { nome: 'branco', cor: '#ffff'},
+           { nome: 'lilás', cor: '#C8A2C8'}
+    ],
+    descricao:''
+  },
+    {
+    id:"11",
+    img:["img/conjunto-primium01.jfif"],
+    nome:"Conjunto Premium",
+    preco:"R$ 140,00",
+    tamanhos:["GG"],
+    cores:[{ nome: 'verde pistache', cor: '#93C572'}],
+    descricao:''
+  },
+  {
+    id:"12",
+    img:["img/calça-leggings02.jfif","img/calça-leggings01.jfif"],
+    nome:"Calça Legging",
+    preco:"R$ 45,00",
+    tamanhos:["M","G","GG"],
+    cores:[{ nome: 'vermelho', cor: '#e80729'},
+           { nome: 'lilás', cor: '#C8A2C8'},
+           {nome:'cinza', cor:'#B0B0B0'},
+           { nome: 'verde militar', cor: '#4B5320'},
+           { nome: 'azul marinho', cor: '#0B1C2D'}
+    ],
+    descricao:''
+  },
+  {
+    id:"13",
+    img:["img/camisa-adidas01.jfif"],
+    nome:"",
+    preco:"R$ 35,00",
+    tamanhos:["M","GG"],
+    cores:[{nome:'bege', cor:'#F5F5DC'},
+           { nome: 'preto', cor: '#000000'},
+           { nome: 'vinho', cor: '#6A0F1C'}],
+    descricao:''
+  },
+  {
+    id:"14",
+    img:["img/camisa-nike01.jfif"],
+    nome:"",
+    preco:"R$ 40,00",
+    tamanhos:["M","G","GG"],
+    cores:[{ nome: 'rosa', cor: '#F48FB1'},
+           { nome: 'azul', cor: '#42A5F5'}
+    ],
+    descricao:''
+  }
 
 ];
 
@@ -161,7 +252,7 @@ function btnComprar(){
         return;
     };
 
-    if(!corSelecionada){
+    if (produto.cores && produto.cores.length > 0 && !corSelecionada) {
         mostrarAlerta('Selecione uma cor', 'erro');
         return;
     }
