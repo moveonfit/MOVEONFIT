@@ -377,7 +377,7 @@ Fico no aguardo da confirmação.
 Muito obrigado! 
 `;
 
-const telefone = '5511984210737';
+const telefone = '5511942697064';
 const url = `https://wa.me/${telefone}?text=${encodeURIComponent(mensagem)}`;
 
 window.open(url, '_blank');
