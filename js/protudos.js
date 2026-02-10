@@ -72,7 +72,8 @@ const produtos = [
     preco:"R$ 99,99",
     tamanhos:["P","M"],
     cores:[{ nome: 'vinho', cor: '#722F37'},
-           { nome: 'azul', cor: '#1E90FF'}
+           { nome: 'azul', cor: '#1E90FF'},
+           { nome: 'verde', cor: 'rgb(17, 238, 17)'}
     ],
     descricao:'Roupa fitness feminina confeccionada em tecido poliamida, com toque macio, alta elasticidade e ajuste perfeito ao corpo. Oferece respirabilidade, secagem rápida e máximo conforto durante os treinos. Ideal para atividades físicas e uso diário, unindo desempenho, estilo e durabilidade'
   },
@@ -98,7 +99,7 @@ const produtos = [
   },
     {
     id:"9",
-    img:["img/short-marron01.jfif","img/short-marron02.jfi","img/short-marron03.jfif"],
+    img:["img/short-marron01.jfif","img/short-marron02.jfif","img/short-marron03.jfif"],
     nome:"Short",
     preco:"R$ 40,00",
     tamanhos:["P","M","G","GG"],
@@ -120,7 +121,7 @@ const produtos = [
   },
   {
     id:"11",
-    img:["img/calça-leggings02.jfif","img/calça-leggings01.jfif"],
+    img:["img/calça-leggings02.jfif"],
     nome:"Calça Legging",
     preco:"R$ 45,00",
     tamanhos:["M","G","GG"],
@@ -128,14 +129,14 @@ const produtos = [
            { nome: 'lilás', cor: '#C8A2C8'},
            {nome:'cinza', cor:'#B0B0B0'},
            { nome: 'verde militar', cor: '#4B5320'},
-           { nome: 'azul marinho', cor: '#0B1C2D'}
+           { nome: 'azul marinho', cor: '#265b91'}
     ],
     descricao:'Roupa fitness feminina confeccionada em tecido poliamida, com toque macio, alta elasticidade e ajuste perfeito ao corpo. Oferece respirabilidade, secagem rápida e máximo conforto durante os treinos. Ideal para atividades físicas e uso diário, unindo desempenho, estilo e durabilidade'
   },
   {
     id:"12",
     img:["img/camisa-adidas01.jfif"],
-    nome:"",
+    nome:"Camisa Adidas",
     preco:"R$ 35,00",
     tamanhos:["M","GG"],
     cores:[{nome:'bege', cor:'#F5F5DC'},
@@ -146,7 +147,7 @@ const produtos = [
   {
     id:"13",
     img:["img/camisa-nike01.jfif"],
-    nome:"",
+    nome:"Camisa Nike",
     preco:"R$ 40,00",
     tamanhos:["M","G","GG"],
     cores:[{ nome: 'rosa', cor: '#F48FB1'},
