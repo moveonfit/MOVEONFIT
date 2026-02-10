@@ -71,9 +71,9 @@ const produtos = [
     nome:"Conjunto Vinho",
     preco:"R$ 99,99",
     tamanhos:["P","M"],
-    cores:[{ nome: 'vinho', cor: '#722F37'},
+    cores:[{ nome: 'vinho', cor: '#a310a3'},
            { nome: 'azul', cor: '#1E90FF'},
-           { nome: 'verde', cor: 'rgb(17, 238, 17)'}
+           { nome: 'verde', cor: '#25a025'}
     ],
     descricao:'Roupa fitness feminina confeccionada em tecido poliamida, com toque macio, alta elasticidade e ajuste perfeito ao corpo. Oferece respirabilidade, secagem rápida e máximo conforto durante os treinos. Ideal para atividades físicas e uso diário, unindo desempenho, estilo e durabilidade'
   },
